@@ -1,0 +1,137 @@
+functions are 2 types
+1.pre-defined
+2.user defined
+
+These 2 types of functions are used 2 keywords
+1.static===>common functions/class level functions
+2.Non-static===>instance functions /object level functions
+
+4 types of packages in java
+
+lang(java.lang)-->super class for all the classes
+io (java.io)
+net (java.net)
+
+All the super classes
+java.lang.Object
+java.lang.System
+java.lang.String
+java.lang.StringBuffer
+
+
+		STATIC
+	============================
+common functions
+class level functions
+
+It is common to every body is called class level functions
+If static is effected ,total class effected.	
+If sharing or common is available then it is static
+It declare one member as static keyword is static.
+This keyword could be given to class,variable,methods,block,objects.
+Constructor never be static.
+
+		NON-STATIC
+	==============================
+It is object level functions
+Non static is effected ,only one object is effected.
+-->variabke name is same but value is different then it is non static.
+
+
+Static object can access all the objects.
+
+class Student
+{
+int sno;
+String sname;
+Static String add;
+static int busno;
+}
+Student s1=new Student();
+Student s2=new Student();
+
+
+s1-------------------->sno,sname--------
+					|--add,busno
+s2--------------------->sno,sname-------
+
+
+how many number of functions available in java
+17 types available in java
+
+1.No return type and NO parameters(NRNP)
+2.NO return type and WITH parameters(NRWP)
+3.WITH return type and NO parameters(WRNP)
+4.WITH return type and WITH parameter(WRWP)
+
+every function have 4 types of return types 
+1.primary
+2.object
+3.array
+4.combination
+
+1.NRNP
+------
+having only type of function because no parameters passing and no return type
+ex:- sum()
+
+2.NRWP
+------
+having 4 types of functions because having parameters in function name
+ex: sum(int a);--->primitive
+    sum(Addition a)--->object
+    sum(int arr[])--->array
+    sum(int a,Addition ab)--->combination
+
+*********************Addition is a class name*********************
+3.WRNP
+------
+having 4 types of functions because return type with no parameters
+ex:     int sum()-->primitive
+	Addition sum()-->object
+	arr[] sum()-->array
+	--combination
+
+4.WRWP
+-------
+having 8 types of functions because of return type nd parameters available
+ex:
+	int sum(int a)
+	int sum(Object obj)
+	etcc.................
+total 17types of functions are available in java
+
+---->When you pass function as a parameter then it is called function as a parameter then it is called function oriented program.
+	it is introduced in 1.8 version
+	it is called 'lamda'
+average(total())
+{
+----
+---
+--
+}
+
+			CASTING
+		==============================
+
+1.primary casting
+2.object casting
+
+casting are 2 types implict nd explict .these 2 are working with primary and object casting.
+Creation of object in caller and callee.
+
+
+Object x=t1.sum(10,20); //caller
+
+Object sum
+{
+---
+---
+Object s1=new Object();
+return s1;
+}
+
+//callee
+
+s1 is a name is reference to the object.
+An object can havde any no of references.

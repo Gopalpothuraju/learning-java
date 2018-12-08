@@ -1,0 +1,397 @@
+								JAVA
+							========================
+	
+	
+	1.core java
+	2.adv.java
+	3.framework
+		(webservices)
+1.core java
+-----------
+if u learn core java u should  learn c&cpp.
+2.adv java
+-----------
+if u learn adv java u should learn core java.
+
+3.frame work
+-----------
+	1.hibernate
+	2.spring
+
+API
+----
+Application Programing Interface.
+API is nothing but specifications.
+API is an interface for application programing.
+
+
+WHEN EXECUTE THE "C" FILE THEN NO.OF FILES ARE CREATED IN RAM
+---------------------------------------------------------------
+	4 files are created 1.Filename.c
+			    2.Filename.obj
+			    3.Filename.EXE
+			    4.Filename.bak
+
+1.Filename.c
+-----------
+It is a source file.It will open and rewrite.
+
+2.Filename.obj
+---------------
+-->It is object file 
+-->This file cant open and modify
+-->These file is createrd when the program is compiling(ALT+f9)
+
+3.Filename.EXE
+---------------
+-->It is executable file
+-->this file also cant open and modify.
+-->These file is created when the program is executing(CTRL+f9)
+
+4.Filename.bak
+------------
+-->It is a backup file.
+-->It is created when the source code is saved.
+-->It is used when the source code is deleted then it will change the name .bak to .c
+ filename.bak --->filename.c
+
+
+
+
+WHEN EXECUTE THE "JAVA" FILE THEN NO.OF FILES ARE CREATED IN RAM
+--------------------------------------------------------------
+	3 files are created 1.Filename.java
+			    2.Filename.class
+			    3.Filename.java.bak
+
+1.Filename.java
+--------------
+-->It is source code (compare with 'c' in c there is a .c file).
+-->IT is open and modify and run anywhere.
+
+2.Filename.class
+---------------
+-->It is class file(compare with 'c' in c there is an object(.obj) file).
+-->This file cant open and modify
+-->These file is created when the program is compiling(javac filename.java)
+
+3.Filename.java.bak
+--------------------
+-->It is backup file(compare with 'c' in c there is a .bak file).
+-->It is created when the source code is saved.
+-->It is used when the source code is deleted then it will change the name java.bak to .java
+	filename.java.bak -->filename.java
+
+Differences b/w C compiling and JAVA compiling
+--------------------------------------------
+In C, 4 files are crearted.
+In JAVA,3 files are created
+In JAVA,there is no execution file(java filename)
+In JAVA,.bak file is easy to find it is java file compare with c.(In file name they mention .java)
+
+
+****JAVA supports in WIndows OS,Mac OS,Linux,Solaris.****
+
+JAVA --->
+.net --->wet network  (it is a package. c#,VB.net,)
+unics--->uniflexed information computing systems
+
+
+JAVA
+----
+java is independent language
+
+why java is independent languahge:Because of JVM.jvm is fully secured.
+why JVM is secured:JVM follows only byte code instructions.if user can give rather than that JVM will raise the errors automatically.
+
+	C
+      ----
+c is dependent language.
+c is procedure language.
+it will execute one system they cant use in another system.the file will open but not compiled.
+ 
+
+
+			COMPILATION PROCESS OF 'C'
+			-------------------------
+
+			source code
+			   .
+			   .
+			   '
+			   '
+		       Expanded source code(header file +source code)
+			   .
+     			   .	
+			   .
+			.obj file
+			   .
+			   .
+			   .
+			Linker
+			   .
+			   .
+			   .
+			CS.LIB
+			   .
+			   .
+			   .
+			.exe file
+			   .
+			   .
+			   .
+			   .
+			Loader
+			   .
+			   .
+			   .
+			Execution
+			   .
+		 	   .
+			   .
+			output
+   					  
+
+
+source code----->.obj file (when  compile the program then compiler comes to .obj file)ALT+f9
+Linker ---->Output  (When compiler execute the program )CTRL+f9
+
+
+
+EXE
+-----
+
+exe file having trhese instructions:
+	1.source code
+	2.Lib
+	3.processor
+	4.OS
+.exe file executes in only same processor and same OS.
+therefore,C is called system dependent.
+
+
+
+	COMPILATION PROCESS OF 'JAVA'
+	------------------------------
+
+	source code(filename.java)
+		.
+		.
+		.
+		.
+	class file(filename.class)
+
+
+Class file contains 
+1.source code
+2.Lib
+
+When execute the java file no need to check processor and os
+
+Java is architectural neutral and processor neutral.
+Java is independent because OS is independent.
+Java is portable language.
+
+portability in 3 ways
+1.source code portability.
+2.processor portability.
+3.OS portability.
+
+
+
+
+		  	     JVM
+		-------------------------
+		/		.	\
+	       /		.	 \
+	      /			.	  \
+	AMD processor 	   		Intel
+		\		. 	/
+		 \		.      /	
+		  \		.     /
+		Windows,Linux,Mac,Solaris
+
+
+Types of platforms in JAVA:
+
+1.Software
+2.Hardware
+
+1.software
+----------
+compiler and interpreter
+
+2.Hardware
+----------
+Operating System (OS)
+
+platform:
+---------
+-->Its area either it executed or translated.
+
+
+				Programing Language:
+				---------------------
+-->Syntax
+-->Semantics
+
+Languages is used for communication b/w user & system.
+
+syntax-->grammer
+semantics-->meaning
+
+types of errors:
+3 tpes
+1.syntax errors
+2.semantical errors
+3.logical errors
+
+Statement:
+---------
+int a=10;
+
+statement is a combination of tokens.
+token:smallest individual parts of statement
+----
+statement are also called as instruction.
+
+Tokens
+------
+1.Literals
+2.Keywords
+3.Seperators
+4.operators
+5.comment symbols
+6.identities
+
+1.Literals:
+----------
+It is a value which possible to modify or cannot modify.
+which  is not modify is called constant literals.
+string literals,boolean literals,character literals.
+
+2.Keywords
+----------
+It is a word which is predefined or whose meaning is already defined.
+goto and const : these 2 are not keywords
+In java,instead of const we can use 'final'.
+
+3.Seperators:
+------------
+{},(),[],;,:, , .
+THese are all the seperators which is used for seperate the values and statements etc..
+
+4.Operators:
+------------
+arthematic
+logical
+etc..
+
+5.Identifiers:
+-------------
+Class name,package name,method name,object name,variable name
+To identify anything from above.
+
+6.Comment symbols:
+-----------------
+	1.In C
+		1.single line 	/*-----*/
+		
+		2.multilines 	/*-----
+				 ------
+				 ------*/
+	2.In CPP/C++
+		1.single line 	//------------
+
+		2.multilines 	/*-------
+				  -------
+				  ------*/
+
+	3.In JAVA
+		1.single line   //---------
+
+		2.multilines	/*-----
+				  -----
+				  ----*/
+
+		3.HTML		/* *-----
+				   *-----
+				   *-----*/
+
+		example
+				int a=10;
+					where,
+						int=keyword
+						a=identifiers
+						'=' =operator
+						10=literal
+						; = seperator
+
+
+				EXPRESSIONS
+			=========================
+
+expression is a combination of operators and operands.
+
+	-x ====> 1 operator and 1 operand (UNARY)
+	x+y====> 1 operator and 2 operanmds(BINARY)
+	(a>b)?a:b; ===> 3 operands and 2 operators (TERINARY) --->It is used instead of 'if'
+
+
+---->An operator is a symbol which is participating operations.
+
+
+							STATEMENTS
+						===========================
+	Types of statements:
+	1.expression statements
+	2.control statements
+	3.loop statements
+	4.safeguard statements
+	5.transfer(or)jumping statements
+
+
+1.expression statements:
+------------------------
+declaration statements
+initialization or assignment statements
+	memory allocation statements
+	pre increment(++i)
+	post increment(i++)
+	pre decrement(--i)
+	post decrement(i--)
+	function calling
+
+2.control statements:
+---------------------
+if 
+switch
+
+3.loop statement:
+-----------------
+for 
+while
+do while
+
+4.safeguard statements:
+-----------------------
+try
+catch
+
+5.transfer (or) jumping statements
+---------------------------------
+goto
+continue
+break
+
+
+
+*******************************************************
+
+combination of tokens are called statements.
+combination of statements are called programs.
+combination of programs are called package.
+combination of packages are called software.
+
+********************************************************
+

@@ -1,0 +1,76 @@
+diff. b/w array list and linked list
+-------------------------------------
+searching is fast in array list .
+insertion and deletion is fast in linked list.
+
+Arraylist search operation is faster than linkedlist.
+(Arraylist is used indexbasedelements to search.directly checked an index number but in linkedlist use travesal operation)
+Linkedlist elements deletion and insertion is faster compared to arraylist
+
+array list can perform only stack operation and linked list can perform stack and queue operations.
+
+
+all the methods done with arraylist is same in linked list.
+
+linked list have 2 extra methods compare with array list
+1.getFirst()---->print first element of the index
+2.getLast() ---->print last element of the index
+
+s.o.p(obj.getFirst());
+s.o.p(obj.getLast());
+
+diff. b/w arraylist and vector
+-------------------------------
+
+arraylist in non sysnchronized 
+vector is synchronised
+
+array list grows half in its size.
+vector grows double in its size.
+arraylist is fast performance and vector is slower performanance
+
+import java.util.*;
+class VectorDemo
+{
+	public static void main(String args[]) {
+	Vector v=new Vector();
+	v.add("a");
+	v.addElement("B"); //legacy method
+	v.add("C");
+	v.addElement("D"); //legacy method
+	s.o.p(v);
+	s.o.p(v.get(1));
+	s.o.p(v.elementAt(2)); //legacy method
+	v.add(3,"G");
+	v.addElementAt("H",4); //legacy method
+	s.o.p(v);
+	v.remove(2);
+	v.removeElementAt(5); //legacy method
+	v.removeElement("H"); //legacy method
+	s.o.p(v);
+}
+}
+
+
+STACK
+
+import java.util.*;
+class StackDemo
+{
+	public static void main(String[] args) 
+	{
+		Stack s= new Stack();
+		s.push("a");
+		s.push("b");
+		s.add("c");
+		s.add("d");
+		System.out.println(s); // [a,b,c,d]
+		System.out.println(s.pop()); // d
+		System.out.println(s); // [a,b,c]
+		System.out.println(s.peek()); c
+		System.out.println(s); // [a,b,c]
+
+
+	}
+}
+	

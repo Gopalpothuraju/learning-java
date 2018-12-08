@@ -1,0 +1,143 @@
+		PUBLIC STATIC VOID MAIN (STRING[] ARGS);
+	===============================================================
+
+main() 
+=======
+-->main is name of the function.
+-->it is starting and ending of the program(cyclic);
+-->main() function name is predefined &in between the function code is user defined
+
+
+void
+=====
+--->main is not talking to OS directly because we can use void.
+--->java is talking with JVM.
+-->No need to return a value to JVM.JVM is always monitoring to program.
+--->JVM is passed to OS.
+
+
+static
+=========
+--->main function is not object level function.it is class level function.
+**main function is common function called with class names.
+
+**static function can be called with class names and object methods.
+
+*********main is taking as static then object creation is not necesary
+
+public
+========
+-->public is used for outside the function also.
+-->function calling is done in anywhere.
+JVM calls main(). then main() function and class having different places then we say as public.
+
+string
+=======
+
+-->if INT takes only interger values are possible.
+-->if double takes double and integer values are possible
+etc........
+every type having some restrictions but stribg does not have any restrictions then we can take any values usingg string
+
+args
+=====
+-->we can pass arguments to string.
+
+difference b/w string[] args & string args[]  
+string args[]
+--------------
+-->C/C++ developers can use this
+disadvantage:
+============
+unnecessarly developers can concentrate on variables.
+
+string[] args
+----------------
+-->java developers can follow this type .
+
+advantages:
+==========
+visibility and clarification
+-->concentrating in dimensions & type
+
+
+
+
+	WHY JAVA IS COMPLETE BUT NOT PURE OBJECT ORIENTED PROGRAMING
+=================================================================================
+
+--->Java is complete OOP because of all the functions are written in class only.
+
+C++ is partial/incomplete OOP because of caller functions in main and main() is outside the class.
+
+
+===>without class name or without object cant take functions in java or CPP.
+When you develop own types is called not pure or impure
+				     ------------------
+In java we can develop your own primitive types with the help of old types.therefoe, java is impure.
+
+PURE OOP means
+--------------
+we cant develop own types is called pure.
+In case of pure OOP ,type decarations are not possible.
+pure object oriented having restrictions only defined objects are used.
+pure OOP whatever available we use otherthan we cant use.
+
+because of these reasons java developers use impure OOP (create your own type).
+
+
+Impure OOP ,primiary types also available.
+
+
+
+*************************************************************************************************************
+IN JVM ,inbuilt programs is there,to find .class file this concept is called introspecror(or) reflection.
+
+
+
+
+		OBJECT CREATION
+	=============================================
+
+syntax:
+1.
+class name  var_name= new classname();
+
+var_name: after creation var_name converts to object name.
+new: go to class declaration
+classname() :automatic initializer or constructor in R.H.S
+
+2.
+classname varname;
+varname=new classname();
+
+
+L.H.S portion is identified at execution time.
+
+automatic initializer
+====================
+
+-->it is called constructor
+-->it is clear the garbage values in the object and replace with default values.
+
+If you dont give any values in program then output shows default values,that default values are given from JVM having default constructor that constructor gives that default values.
+
+Default consr=tructor is available but why developer can write a constructor in the program:
+--------------------------------------------------------------------------------------------
+
+user want to initialize objectswith user values during creation time.
+
+benefits:
+-------
+
+size of the program decreases.
+To remove garbage values 
+
+
+default values:
+==============
+integer 	: 0
+double   	: 0.0
+character	:blank space(/000)
+String		:null
+boolean		:false

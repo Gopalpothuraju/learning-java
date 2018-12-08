@@ -1,0 +1,571 @@
+language:
+========
+    |
+    |__programing language(PL)
+		|
+		|__Statements
+			|
+			|__program
+			     |
+			     |__package
+				 |
+				 |__software
+
+software:
+========
+1.application software
+2.system software
+
+'C' is 75% system software and realted to application software.
+therefore:
+-->'C' is called middle level software.
+
+2.System software:
+-----------------
+Any software which is related to system.
+
+Types of system software
+
+1.OS
+2.compiler and interpreter
+3.virus scanning
+
+
+C & C++ used compiler
+JAVA & .net is used both compiler and interpreter.
+
+compiler is so fast rather than interpreter.
+
+TECHNOLOGY
+==========
+it provides techniques.
+java supports web application by using web technology.
+
+***java is a programing language which supporting web technology to demonstrate web application.
+
+
+COMPILER
+========
+1.linker
+2.loader
+
+these 2 are internal works.
+
+
+				RAM
+			==================
+
+RAM is divided into 3 ways
+
+				 heap area
+
+				stack area
+			
+				local area
+
+
+
+LOCAL
+-----
+any instructions are coming into local area.
+
+STACK
+-----
+local variable and global variable is in stack area.
+Inside the function is nothing but inside the stack area.
+All the conditions in stack.
+Stack is LIFO data structure.
+Stack is temporary memory.
+It is compile time memory.
+Any instuction executed in the stack.
+
+HEAP
+-----
+It is dynamic momry
+It is runtime memory
+
+
+***********   C is runtime environment
+java is compile time environment***********************
+
+
+
+--->In C,compiler is gng to executed in heap area having 4 funtions only.
+	1.malloc()
+	2.realloc()
+	3.calloc()
+	4.free()
+By using these 4 funtions 'C' compiler can understand program can execute in heap araa otherwise all the programs can execute in stack area.
+These 4 functions are heap related functions.
+
+---->In CPP,all the above 4 functions are available & apart from that "NEW" and "DELETE" is also used.
+	1.new()
+==>new is used to  create the object.
+==>delete is used deleting the object.
+
+
+In C,no garbage collector.
+In CPP,manual gc.
+In java,automatic gc.
+
+
+
+#### why java is not supporting destructors????
+
+-->Java having auomatic garbage collector because java not supporting destructor.
+
+***In CPP ,destructors are used for clear the objects using delete.it is manual gc .it is maintained by JVM.
+
+
+
+JVM have 5 portions in RAM:
+
+1.method area
+2.stack area
+3.heap area
+4 PC registers(progran counter)
+5.native methods 
+
+
+			Operating Systems
+		==================================
+
+OS is divided into 2 types
+
+	1.Single user
+	2.Multi user
+
+1.Single user
+------------
+-->It is desktop application
+-->no network
+ user have 2 types 
+
+		1.CUI--DOS
+		2.GUI--Windows
+
+
+Benefits of OS
+-------------
+perform operations
+making ther system active
+
+	Application Software
+	--------------------
+appli. s/w are working when sys. s/w is in active state.
+
+
+application s/w is divided into 2 types:
+1.standalone/desktop
+2.internet appli. -->browser
+
+1.standalone:
+------------
+
+1.general purpose appli. s/w (MS-Office)
+2.specific purpose appli. s/w (accounting s/w tally etc...)
+3.commercial purpose appli. s/w (hospitality mgmt s/w)
+
+
+
+
+
+
+diff. b/w Standalone and web
+
+Standalone
+-----------
+N/W not needed
+mostly executed by click/cmd prompt
+one system needed to perform
+main() is needed
+one tier
+creation,compilation,execution o/p done in client side
+
+	Web
+	----
+N/W must be needed
+inside web browser
+min of 2 sys ---client
+	     ---server
+init() and doesnt have main method
+two tier
+creation,compilation on server side and execution ,o/p in client side
+
+
+Types of client
+--------------
+1.Thick client
+2.THin client/fat client
+
+Types of server
+--------------
+1.THick server
+2.Thin server/fat server
+
+
+
+Thin client --->presentation
+Fat/thick client-->logical+DB
+
+Thin server-->DB logic
+Thick server--->logic+DB
+
+Programing language
+-------------------
+3 levels of PL
+
+1.LOW (only system readable)
+2.Middle
+3.HIGH (human readable)
+
+generations of PL
+ 5 types
+
+
+levels			instruction format			Translation			example
+
+low level		101100					   ----				binary language (BIT)
+1 gl
+
+
+middle level		ADD					Assembler			Assembly language
+2 gl
+
+high level
+3,4,5 gl		int a=10;				interpreter or compiler		basic C,c++ java etc..
+
+
+3rd GL -->using main function 
+4th GL -->without main function(scripting)
+5th GL -->Artificial intelligence(AI)
+
+
+
+Java types
+---------
+JavaSE
+JavaEE
+JavaME
+ java is also following object orientation
+
+
+java Features
+--------------
+
+1.simple
+2.robust
+3.secured
+4.object orientation
+		-->class,encapsulation,inheritance etc..
+5.portable
+6.distribution
+etc................
+
+WHY java is simple:
+---------------
+Java is nothing but simplify of C++
+one new concept is added is called internet or web
+There is no complicated topics
+********************************************************************************************8
+***Dangling pointer
+----------------------
+A pointer is pointing to that location which already modified 
+	*java having pointer but permission to acccess pointer is eliminated
+**********************************************************************************************
+
+Object oriented
+--------------
+java follows OOPs concepts
+
+platform independence
+---------------------
+program can execute in any OS
+
+Robust
+-------
+it means strong or believable 
+believable:any condition program will executing.
+-->some code is wrong then upto correct code will be executed.
+
+class inheritance
+------------------
+inherit from class
+use 'class' keyword
+
+prototype inheritance
+----------------------
+inherit directly from other object
+obj.create() --->functions instantiated
+
+
+Distributed
+----------
+same application can be loaded into different locations or OS
+RMI(remote metho invocation)-->java--java
+CORBA(common object request broken)-->java--anywhere
+EJB(enterprice java Architecture)
+
+
+
+		FUNCTIONS
+======================================
+
+Function is important to program
+function having function name and data type 
+function may or may not be having parameters
+
+functions are 2 types 1.caller
+2.callee
+
+1.caller
+ add();
+caller doesnt have data type
+
+2.callee
+void add()
+{}
+callee having data type
+main() is always callee
+this caller is present in jvm
+
+without caller, we can write callee
+
+if caller is available then they must be have callee but not vice versa
+
+**if callee,caller is may be or may not be
+**if caller,callee compulsory
+
+
+
+*******************
+
+			Program Structures
+			===================
+in C
+
+1.pre processor directories
+2.global declaration/constants
+3.prototype declaration
+4.definition
+5.struct/unionenum statements
+main()
+definitions
+
+1 to 5 is optional
+main()-->it is indication to compiler to start execution
+      -->name is predefined but code is user defined
+
+in C++
+
+1.preprocessor
+2.namespace specification
+3.prototype/definition
+4.struct/union/class/enum
+main()
+definitions
+
+1 to 4 is optional
+main is compulsory
+
+in Java
+
+class
+main
+
+
+
+Type safety
+-----------
+int a;
+it is type safety
+it stores integer values only 
+type safety rules are checked in compilation time
+it is strong type
+***week type is var****
+strong type: strongly typed vor strictly types
+week type:it is varient
+	it is used in JS
+	type may be changed
+	weekly typed or loosely typed
+
+
+***************************************************************************************************************
+
+
+In java 4 types are used to give input values using keyboard
+	1.command line arguments
+	2.Data input stream
+	3.Buffered reader
+	4.Scanner
+
+1.command line arguments
+--------------------------
+using command prompt aruments will be passed
+D:> java Test 10 20
+In c/c+,programs is interact with OS because of programer can use int main() & returning a values at end of the program defenetely
+In java programs is interact with JVM because of no need to return a value jvm is take care of it.
+
+Loading s/w instance into h/w is called booting
+
+it is also caslled as firmware eq. RAM
+
+
+CONSTRUCTOR
+===========
+
+block of codes similar to methods
+spl. type of method which is used initialize the object
+not necessary to write a constructor to a class
+In java having default constructor automatically
+object is created using new() keyword
+it constructs the values at the time of obj creation
+
+Rules
+-----
+1)const name=class name
+2)no explicit return value
+3)cant be abstract ,static,final &synchronisation
+
+Types
+-----
+1.default constructors
+	--> no parameters
+2.parameterized constructors
+	-->specific no.of parameters
+	-->used for different values or same values to dist. objects
+
+Constructor overloading
+------------------------
+constructor is just like a method but without having return type
+same constructor with diff paerameter list
+
+diff b/w constructor and method
+constructor
+-----------
+used to initialize the state of an object
+no return type
+invoked implicitly
+must be class name
+
+method
+--------
+used to expose the behaviour of an object
+return type
+invoked explicitly
+may or may not be class name
+
+METHOD OVERLOADING
+==================
+multiple methods having same name but diff in parameters
+increases readability of the program
+
+***extra behaviour is addedto the original behaviour is called overloading**********
+same kind of operators need not to allocate new memory
+
+2ways
+----
+--->changing no.of arguments
+---->changing the data type
+
+
+**not possible by changing the return type(because of ambiguity)
+
+
+advanages:
+------------
+reducing no of functions
+reducing complexity
+
+
+
+
+In C there is no access specifiers they have storage specifiers
+Storage specifiers are 
+1.register
+2.auto
+3.static
+4.extern
+
+In C++ have access specifiers
+1.public
+2.private
+3.protected
+4.default
+
+
+*************Runtime area always dealing with heap area
+compile time area always dealing with stack area**************************
+
+
+		Control shift/switching:
+ 	=======================================
+-->control is shift from caller to callee.
+-->When we write 'void' for callee that means the main program or another function does not depends on sub progtam or function
+-->Main program is depending on sub program then write a return type like int,float,double etc..
+
+every function have 2 way comunication:
+1.caller to callee(it is passed by arguments and parameters).
+2.callee to caller(it is return type).
+
+
+			Functions
+		==============================
+
+
+sum(a,b); //caller,calling,declared.
+void sum(int a,int b){} //callee,called,defined,implemented,concrete.	
+		-->parameters.
+
+==>Before callee must be called by a caller.
+-->end with ; is caller.
+-->start with { is callee.
+
+
+when every you mention 'void'->return type but does not return any value then caller does not depending on callee result.
+
+void
+---
+void also one return type that callee not returning a value to caller.
+
+callee is maintaining a relationship with caller based on return statement.
+return statement must be in end of the function.
+Return type can able to return only one value (or) variable.
+
+-->When we return a value then callee must change a return type(void to any like int,double).
+-->Return type is returning a value to callee.
+-->When caller recieve a value from callee then it will store in the another variable.
+	int/double i=sum(a,b);
+
+
+	1. The communication channel b/w caller and callee by using arguments and parameter.
+	2. The communication channel b/w callee and caller by using return.
+		
+		every function have 2 channels return type must be same variable may or may not
+
+In 'C' having header files,coming to java having packages
+						---------
+							
+	packing contains:-->interfaces
+			 -->classes
+			 -->abstract classes
+			 -->concrete classes
+			 -->exceptions
+			 -->error
+			 -->enum
+
+interfaces,abstract classes,concrete classes--->variables,constructors,methods.
+
+fnction having pair of paranthesis sum()
+
+constructor/functions are same
+	-->is also a method.
+
+4 types of functions:
+
+1.No return & NO parameter (sum()   &   void sum()  )
+2.NO return & WITH parameter(sum(a,b); & void sum(int,int)   )
+3.WITH return type & NO parameters(int sum(){ return 0;} i=sum(); )
+4.WITH return type & WITH parameters(int sum(int,int){return 0;} i=sum(a,b);})
+
+	 

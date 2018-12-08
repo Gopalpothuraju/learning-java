@@ -1,0 +1,327 @@
+		SET INTERFACE
+	=============================
+set is unordered collections
+set does not allow dublicates.
+retrieving elements using index is not applicable.
+classes:
+1.HashSet
+2.TressSet
+
+1.HashSet
+=========
+-->no gurantee in output
+-->if we try to add dublicate values then it will override the old value.
+-->there is no indexing
+-->in b/w elements cant add new elements
+
+
+import java.util.*;
+class HashSetDemo
+{
+	public static void main(String args[])
+	{
+		HashSet<String> hs=new HashSet<String>();
+			hs.add("A");
+			hs.add("B");
+			hs.add("E");
+			hs.add("D");
+			hs.add("O");
+			hs.add("C");
+			hs.add("C");
+			//hs.add(100); //generics used only string values to be entered
+			//hs.add(3,"G"); //indexing is not applicable in set interface
+			System.out.println(hs); // [A B C D E O]
+			//System.out.println(hs.get(4)); // not available get method in set interface
+			hs.add("S");
+			Iterator itr=hs.iterator();
+			while(itr.hasNext())
+				System.out.println(itr.next());
+	}
+}
+
+
+TreeSet
+======
+
+-->output print in ascending order
+-->they no need to add generics.
+-->if start adding one type of elements then upto end only that type elements will be aplicable .
+-->if we change ClassCastException will occur.
+
+===>it will take similar type of elements only
+
+
+import java.util.*;
+class HashSetDemo
+{
+	public static void main(String args[])
+	{
+		TreeSet hs=new TreeSet(); //no need to mension generics in tree
+			hs.add("A");
+			hs.add("B");
+			hs.add("E");
+			hs.add("D");
+			hs.add("O");
+			hs.add("C");
+			hs.add("C"); //dublicates will overide
+			//hs.add(100); //type will change so classcast exception will occur
+			//hs.add(3,"G"); //indexing is not applicable in set interface
+			System.out.println(hs); // [A B C D E O]
+			//System.out.println(hs.get(4)); // not available get method in set interface
+			hs.add("S");
+			Iterator itr=hs.iterator();
+			while(itr.hasNext())
+				System.out.println(itr.next());
+	}
+}
+
+
+
+
+SORTING COLLECTIONS
+
+sorting of collections is of 3 types 
+1.wrapper class sorting
+2.String sorting
+3.User defined object sorting
+
+
+
+1.wrapper class sorting:
+----------------------
+-->except string, remaining all the values can be sorted.
+
+import java.util.*;
+class WrapperSort
+{
+	public static void main(String[] args)
+	{
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		al.add(234);
+		al.add(123);
+		al.add(356);
+		al.add(523);
+		al.add(230);
+		al.add(167);
+		
+	System.out.println(al);
+		Collections.sort(al); //collections is an interface ,sor is a method to print sorting
+	System.out.println(al);
+		Collections.reverse(al); //reverse is a method to print reverse of numbers
+	System.out.println(al);
+		Collections.shuffle(al); // shuffle is a method to print shuffling elements.
+	System.out.println(al);
+	}
+}
+
+
+
+
+2.String Sorting
+------------------
+-->sorting string values.
+-->first capital letter will check after than small letters
+-->all the methods having in wrapper class also same.
+import java.util.*;
+class StringSort
+{
+	public static void main(String[] args)
+	{
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("GOPAL");
+		al.add("Sai");
+		al.add("ravi");
+		al.add("gopi");
+		al.add("mani");
+		al.add("ammi");
+		
+	System.out.println(al);
+		Collections.sort(al); //collections is an interface ,sor is a method to print sorting
+	System.out.println(al);
+		Collections.reverse(al); //reverse is a method to print reverse of values
+	System.out.println(al);
+		Collections.shuffle(al); // shuffle is a method to print shuffling elements.
+	System.out.println(al);
+	}
+}
+
+
+3. User defined sorting:
+-----------------------
+
+-->cant be sorted jvm directly by collections interface.
+-->to sort user defined objects we need to consider feilds (variables) for this collections class cant decide the sorting order and programer needs to write own sorting logics.
+-->users can write logic for sorting using comparable interface or comparator inferace.
+java.lang.Comparable / java.util.Comparator
+
+differences b/w comparable and comparator
+-----------------------------------------
+
+Comparable		
+===========
+
+1.provides single sorting seq. In other words,we can sort the collection on the basis of single element such as id or name or price etc..
+
+2.it affects the original class i.e, actual class modified
+3.compareTo() to sort elements
+4.java.lang package
+5.we can sort the list elements of comparable type by Collections.sort(list);
+
+Comparator
+===========
+
+1.provides multiple sorting seq. In other words , we can sort the collection on the basis of multiple elements such as id,name ,price etcc..
+
+2.does not effect the original clasds i.e, actual class is not modified.
+
+3. compare() method to sort elements
+4.java.util package
+5.we can sort the list elements of Comparator type by Collections.sort(List,Comparator) method
+
+
+import java.util.*;
+class Student implements Comparable
+{
+//if u apply generics for comparable interface then no need to pass object direct u can pass class only 
+// class Student implements Comparable<Student>
+//public int compareTo(Student al)
+	int sno,marks;
+	String marks;
+	Student(int sno,String name,int marks)
+	{
+		this.sno=sno;
+		this.name=name;
+		this.marks=marks;
+	}
+	public String toString()
+	{
+		return sno+"\t"+name+"\t"+marks;
+	}
+	public int compareTo(Object obj)
+	{
+		Student stu=(Student)obj;
+		if(marks==al.marks)
+			return 0;
+		else if(marks>al.marks)
+			return 1;
+		else 
+			return -1;
+	}
+}
+
+
+
+in if condition marks is constructor passed marks and al.marks is Collections.sort(list) passed marks
+import java.util.*;
+class Comparableinterface
+{
+	public static void main(String[] args)
+	{
+		ArrayList<Student> al=new ArrayList<Student>();
+		
+		Student s1=new Student(101,"Gopal",3567);
+		Student s2=new Student(102,"Mani",2567);
+		Student s3=new Student(103,"Gopi",1567);
+		Student s4=new Student(104,"Sai",4167);
+		Student s5=new Student(105,"Ravi",6567);
+
+			al.add(s1);
+			al.add(s2);
+			al.add(s3);
+			al.add(s4);
+			al.add(s5);
+
+
+		System.out.println("===========BEFORE SORTING===========");
+			Iterator itr1= al.iterator();
+				while(itr1.hasNext())
+					System.out.println(itr1.next());
+
+		Collections.sort(al);
+	
+				System.out.println("===========AFTER SORTING===========");
+			Iterator itr2= al.iterator();
+				while(itr2.hasNext())
+					System.out.println(itr2.next());
+	}
+}
+
+
+iterator also mention generics.
+
+
+
+class Customer
+{
+	int cid,regno;
+	String cname;
+	Customer(int cid,String cname,int regno)
+	{
+		this.cid=cid;
+		this.cname=cname;
+		this.regno=regno;
+	}
+
+	public String toString()	
+	{
+		return 	cid+"\t"+cname+"\t"+regno;
+	}
+}
+import java.util.Comparator
+class RegSort implements COmparator<Customer>
+{
+	public int compare(Customer c1,Customer c2)
+	{
+		if(c1.regno==c2.regno)
+			return 0;
+		else if(c1.regno>c2.regno)
+			return 1;
+		else
+			return -1;
+	}
+}
+				
+
+import java.util.Comparator
+class NameSort implements Comparator<Customer>
+{ 
+	public int compare(Customer c1,Customer c2)
+	{
+		return c1.cname.compareTo(c2.cname);\
+	}
+}
+class CompareDemo
+{
+	public static void main(String[] args)
+	{
+		ArrayList<Customer> al=new ArrayList<Customer>()
+		Customer c1=new Customer(100,"Gopal",420);
+		Customer c2=new Customer(101,"Mani",740);
+		Customer c3=new Customer(102,"Gopi",120);
+		Customer c4=new Customer(103,"ravi",685);
+		Customer c5=new Customer(104,"sai",345);
+		al.add(c1);
+		al.add(c2);
+		al.add(c3);
+		al.add(c4);
+		al.add(c5);
+
+		System.out.println("===========Before sorting===========");
+		Iterator<Customer> itr=al.iterator();
+			while(itr.hasNext())
+				System.out.println(itr.next());	
+		
+		
+		System.out.println("===========Sorting on Name===========");
+		Collections.sort(al,new NameSort);
+		Iterator<Customer> itr1=al.iterator();
+			while(itr1.hasNext())
+				System.out.println(itr1.next());	
+		
+		System.out.println("===========Sorting on reg number===========");
+		Collections.sort(al,new RegSort);
+		Iterator<Customer> itr2=al.iterator();
+			while(itr2.hasNext())
+				System.out.println(itr2.next());
+	}
+}

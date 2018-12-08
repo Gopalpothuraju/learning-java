@@ -1,0 +1,196 @@
+iterCollection Framework:
+--------------------
+introduced in java1.2
+
+It provides an environment (platform) to store ,retrieve, manage and manuplate objects.
+Adv. of collections over arrays:
+Array stores similar kindof elements where as collection stores disimilar.
+Size of an array is fixed where as collections is dynamic.
+Deleting and adding elements in array is complex where as in collections is easy.
+
+collections contains:
+1.Intrerfaces
+2.Implementations
+3.Algorithms.
+
+Interfaces: define collection methods 
+implementations: will provide functionality to methods in interface 
+Algorithms:logics which are return in implementation
+
+package:
+java.util.Collection -->it is super interface for all the collections.
+in collection interface we have 3 interfaces:
+1.List
+2.Set
+3.Queue
+
+1.List:
+It is an interface.
+dervied from collection interface.
+List is ordered collection
+List have some classes :
+1.ArrayList
+2.LinkedList
+3.Vector
+4.Stack
+
+Vector and Stack classes are present in java 1.0 where java1.2 introduced collections they are merged into collections.
+these 2 classes are called LegacyClasses(means old classes).
+
+
+2.Set:
+It is an interface.
+dervied from collection interface.
+List is unordered collection
+Set have some classes :
+1.HashSet
+2.TreeSet
+3.SortedSet(interface)
+
+3.Queue:
+It is an interface.
+dervied from collection interface.
+Queue have some classes :
+1.PriorityQueue
+
+Map is not in collection interface but we can implements from map to collections directly.
+
+
+
+1.List
++++++++++++++++++++++++++++++
+
+1.ArrayList:
+---------------
+ArrayList ---class
+
+Constructors:
+
+ArrayList();
+ArrayList(Object);
+
+Methods:
+
+void add(Object); -->adding object
+void add(int,Object);-->adding object to specified index
+Object get(int);-->geting object from specified index
+void remove(int); -->remove the object from specified index
+void clear(); -->clear the complete collection
+Object[] toArray(); -->convert collection to array
+void addAll(Collection); -->add collection into collection
+void removeAll(Collection) -->remove collection from collection
+
+adding user defined objects to list.
+
+import java.util.*;
+class EmpList {
+	public static void main(String args[]) {
+		ArrayList l=new ArrayList();
+		
+		Emp e1=new Emp(101,"ABC",3000);
+		Emp e2=new Emp(102,"ACC",4000);
+		Emp e3=new Emp(103,"ADC",5000);
+		l.add(e1);
+		l.add(e2);
+		l.add(e3);
+		l.add(new Emp(121,"AAA",5667));
+
+		System.out.println(l);
+
+	}
+}
+
+Emp having an old class
+
+GENERICS
+========
+
+
+
+ex:
+import java.uti;.ArrayList;
+class ArrayListDemo {
+public static void main(String[] args) {
+ArrayList al=new ArrayList();
+	al.add("A");
+	al.add("B");
+	al.add("C");
+	al.add("D");
+
+System.out.println(al); //print all the values(as container) from colection ==> [A, B, C, D]
+System.out.println(al.get(3)); //print the values which is present in index 3 ==> D
+al.remove(2);//remove the value from specified index
+System.out.println(al); // [A B D]
+al.add("F");//adding value to the last ==>[A, B, D, F] 
+al.add(3,"G"); //adding value at the specified index ==> [A, B, D, G, F]
+
+al.add(new Integer(100)); //before 1.5 no autoboxing therefore we can specify class name Integer alogn with new operator. // ==> [A B D G F 100]
+al.add(3,567.56);//from java1.5autoboxing is done no need to specify Wrapperclass(Double)==>[A, B, D, G, F, 100, 
+567.56]
+
+Object[] or=al.toArray();
+for(int i=0;i<or.length;i++)
+{
+System.out.println(or[i]);
+}
+}
+//printing values in array format
+A
+B
+D
+G 
+F 
+100
+567.56
+
+iterator interface will help traversing elements from collection.
+
+iterator interface coming from collection interface.
+iterator only forward direction.
+ListIterator is both forward nd reverse diection
+listIterator method can be used. 
+forward : hasNext();
+reverse : hasPrevious();
+Iterator -->interface
+iterator -->method present in collection interface
+
+System.out.println("Traversing Elements");
+Iterator itr=al.iterator();
+while(itr.hasNext()) 
+System.out.println(itr.next());
+
+
+Adding collection to collection:
+--------------------------------
+we can perform adding operartion for multiple collection but not at a time 
+c1,c2,c3
+c1+c2
+c1+c3
+
+import java.util.*;
+class AddCollection {
+	public static void main(String[] args) {
+		ArrayList al=new ArrayList();
+		ArrayList al1=new ArrayList();
+	al.add("A");
+	al.add("B");
+	al.add("C");
+	al.add("D");
+
+System.out.println(al);//[A,B,C,D]
+	al1.add("P");
+	al1.add("Q");
+	al1.add("R");
+	al1.add("S");
+
+System.out.println(al1);//[P,Q,R,S]
+
+al.addAll(al1); //we can add all the values in al1 to al collection at the end of the first collection==>[A,B,C,D,P,Q,R,S]
+al.addAll(3,al1);//we can add all the values in al1 to al collection at the specified of the first collection==>[A,B,C,P,Q,R,S,D]
+al.clear(); //clear the collection ==> []
+al.removeAll();//remove the collection
+al.remove(6); // remove the value from the specified index.
+System.out.println(al);
+
+
+List interrface can take dublicates and more than one null values.  

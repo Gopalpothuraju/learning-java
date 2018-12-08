@@ -1,0 +1,260 @@
+				
+							INHERITANCE
+						===========================
+
+==>inheritance is a name of mechanism 
+
+First u learn relationships;
+--------------------
+
+RELATIONSHIPS B/W THE CLASSES:
+=============================
+
+3 types :
+
+1.uses/use-a/using/dependency:
+
+2.has-a/delegation/containership
+
+3.is-a/generalisation/specialisation
+
+When sould require relationships b/w the class.
+When one class wanted to utilize another class members.
+
+1.DEPENDENCY:
+============
+We want access class A function in class B then we create class A object inside the class B method is called depedency relationship.
+
+ex:
+===
+2.creating object in methods:
+------------------------------
+class A
+{
+	void intput()
+	{
+		s.o.p("i am A class input");
+	}
+}
+class B
+{
+	void output()
+	{
+		A a1=new A();
+		a1.input();
+	}
+	p.v.s.m(S a)
+	{
+		B b1=new B();
+		b1.output();
+	}
+}	
+
+
+====>>Recognize dependency relation is 2 types
+
+1.passing objects as parameters:
+-------------------------------
+
+class A
+{	
+	int a=10,b=30,c;
+	void input()
+	{
+		c=a+b;
+		s.o.p(c);
+	}
+}
+class B
+{
+	void output(A x)
+	{
+		x.input();
+	}
+	p.s.v.m(S a)
+	{
+		B b1=new B();
+		b1.output(new A());
+	}
+}	
+		 
+
+diff b/w uses-a and has-a::
+1.uses-a,always object creation is inside the function or object is passing as a parameter.
+	it is object based usability.
+	it is method level function.
+2.has-a,always object  reation inside the class.
+	it class level function.
+	it is also object based usability.
+
+
+2.has-a/delegation/containership:
+=================================
+
+==>has-a,always object  reation inside the class.
+==>has-a maintains relationship b/w 2 different hierarchy classes.
+ex:
+class A
+{
+	void intput()
+	{
+		s.o.p("i am A class input");
+	}
+}
+class B
+{
+	A a1=new A();
+
+	void output()
+	{
+		a1.input();
+	}
+	void display()
+	{
+		a1.input();
+	p.v.s.m(S a)
+	{
+		B b1=new B();
+		b1.output();
+		b1.display();
+	}
+}	
+
+
+class Room
+{
+	Table t;
+	Window w;
+	Pillar p;
+	int x=10;
+}
+it is has-a relation ship.
+All these are properties or members of a class.
+
+==>class has properties (or) methods (has-a)
+==>class contains properties (or) methods (container ship)
+
+---> t,w,p are the members of class presently,there is a chance to convert an object when u create new Room();
+
+how strong has-a relationship b/w class& members
+----------------------------------------------
+
+no strong relation then it is called association(it will change no effect to others)
+				     -----------
+medium relation then it is called aggregation (it will change something effect)
+				-------------
+more strong relation then it is composition (it will change complete effect)
+				-----------
+
+==>Based on requirement ,developer can decide composition,aggregaion,association.
+
+==>has-a is not for extension.
+
+*************************************************************************************
+THIS keyword
+============
+
+==>this is used to represent current values.
+this is used in:
+1.variables
+2.methods
+3.constructors
+4.objects
+
+1.variables
+===========
+ this.a=a;
+ 
+2.methods
+=========
+this.methodname();
+it is always in first statement of the function only.
+
+3.constructors
+==============
+this();
+it is also first statement of the function only.
+
+4.object
+=======
+return this;
+
+****************************************************************************
+
+
+	System.out.println();
+	====================
+why or how we can use System.out.println in java
+
+==>java having default classes and packages
+java.lang package contains System class
+and
+java.io package contains PrintStream class
+
+there is a relation b/w these 2 classes .it is has-a relation ship.
+
+class PrintStream
+{
+ void println()
+ {
+	-------------
+	----------
+ }
+}
+class System
+{
+	PrintStream out=new PrintStream();
+	out.println();
+}
+
+
+===>it is default classes in java .if you want to see API to clarification.
+In cmd,javap java.lang.Sytem and javap java.io.PrintStream
+or
+In google search System class API and PrintStream class API.
+
+therefore,we can use System.out.println();
+
+'out' is an object created in System class to call PrintStream methods .
+out is a static object.
+
+****************************************************************************
+
+
+3. is-a/generalisation/spcialisation
+===================================
+
+==>is-a maintians always relationship b/w same class hierarchy
+generalisation is also called as realization.
+
+generalisation means parent class
+specialisation means sub class
+
+is-a relationship mechanism is called inheritance.
+
+inheritance is used pupose of extension
+(child class is extension from parent class)
+it uses 'extends' keyword
+
+if there is extension then reusability is available.
+if there is no extension then reusability is not available.
+
+class A
+{
+	int a=10,b=20;
+	void display()
+	{
+		---------
+		---------
+	}
+}
+class B extends A
+{
+	void output()
+	{
+		int c=a+b;
+		display();
+	}
+}
+
+==>It is inheritance class A values can be used in class B directly.

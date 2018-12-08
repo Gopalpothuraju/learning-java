@@ -1,0 +1,180 @@
+serialization:
+	when an object intended to travel to through the stream we ensure that it does not get drop before reaching destination for which we need to write perminant state to the object in the stream and this process is called as serialization.
+
+java.io.Serializable interface.
+A class need to impliment java.io.Serializable interface to get serialized
+An object which is not serialized is not eligible to travel through the stream.
+if tried then it throughs "java.io.NotSerialzable" exception.
+
+class variables ,method parameters ,return types should also be serialized.
+All the primitive data types ,data type wrapper classes ,arrays, Strings, StringBuffer etc... are serialized by default.
+
+
+ObjectOutputStream -- class
+ constructor :
+	ObjectOutputStream(OutputStream) throws java.io.FileNotFoundException
+ methods :
+	void writeObject(object) throws java.io.IOException
+ObjectInputStream -- class
+ constructors :
+	ObjectInputStream(InputStream) throws java.io.fileNotFoundException
+ Methods :
+	Object readObject() throws java.io.IOException
+
+ex:
+import java.io.Serializable
+class Emp implements Serializable
+{
+	int eno;
+	String ename;
+	double sal;
+  
+	Emp(int eno,String ename,double sal)
+	{
+		this.eno=eno;
+		this.ename=ename;
+		this.sal=sal;
+	}
+	public String toString()
+	{
+		return eno+" "+ename+" " +sal;
+	}
+}
+
+ import java.io.*;
+ class WriteObjects
+ {
+	public static void main(String[] args)
+	{
+	try
+	{
+		ObjectOutputStream os=new ObjectOutputStream(new FileOutputStream("files.ravi"));
+		Emp e1=new Emp(101,"ABC",2344);
+		Emp e2=new Emp(102,"XYZ",9344);
+		Emp e3=new Emp(103,"DEF",4344);
+		Emp e4=new Emp(104,"GHI",7345);
+
+		os.writeObject(e1);
+		os.writeObject(e2);
+		os.writeObject(e3);
+		os.writeObject(e4);
+ 	 System.out.println("Object Stored");
+	os.close();
+	}
+	catch(Exception e)
+	 e.printStackTrace();
+	}
+}
+
+import java.io.*;
+class ReadObjects
+{
+	public static void main(String[] args)
+	{
+			ObjectInputStream os=new ObjectInputStream(new FileInputStream("files.ravi"));
+				Emp a=(Emp)os.readObject();
+				Emp b=(Emp)os.readObject();
+				Emp c=(Emp)os.readObject();
+				Emp d=(Emp)os.readObject();
+	
+	System.out.println(a);
+	System.out.println(b);
+	System.out.println(c);
+	System.out.println(d);
+	os.close();
+	}
+	catch(Exception e)
+	e.printStackTrace();
+}
+
+output:
+=====
+
+javac WribeObjects.java
+java WriteObjects
+==>Object Stored
+java ReadObjects.java
+java ReadObjects
+==>101 ABC 2345
+==>102 DEF 4567
+
+
+
+if Emp class does not implement serialzable interface then thoughs java.io.NotSerializable Exception.
+ 
+without serialization objects cant write in streams   
+
+
+java.io.Writer
+ 	-->PrintWriter
+		-->OutputStreamWriter
+java.io.Reader
+	-->BufferedReader
+		-->InputStreamReader
+
+
+java.io.Writer
+
+Methods :
+ void print(String) throws java.io.Exception
+ void println(String) throws java.io.Exception
+ void flush() throws java.io.Exception
+ void close() throws java.io.Exception
+
+PrintWriter --class
+constructor
+  PrintWriter(OutputStreamWriter(OutputStream)) throws java.io.FileNotFoundException
+
+ex:
+import java.io.*;
+class PWDemo
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			PrintWriter pw=new PrintWriter(new OutputStreamWriter(new FileOutputStream("d.txt")));
+			pw.println("Hello from streams");
+			pw.close();
+		} catch(Excerption e)
+			e.printStackTrace();
+	}
+}
+
+java.io.Reader
+
+Methods :
+ String readLine() throws java.io.IOException
+ void close() throws java.io.IOException
+
+BufferedReader -- class
+constructor
+
+	BufferedReader(InputStreamReader(InputStream)) throws java.io.FileNotFoundException
+
+ex:
+import java.io.*;
+class BufferedDemo
+{
+	static public void main(String[] args)
+	{
+	try
+	{	
+		BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(args[0])));
+		String data="";
+		while((data=br.readLine()!=null)
+		 System.out.println(data);
+	br.close();
+	}
+	catch(Exception e)
+		e.printStackTrace();
+	}
+}
+
+output:
+======
+javac BufferedDemo.java
+java BufferedDemo filename(along withpath if file outside of directory)
+
+*****************
+

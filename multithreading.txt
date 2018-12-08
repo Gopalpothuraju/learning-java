@@ -1,0 +1,245 @@
+Multi-Threading :
+
+thread is also called as light weight process,part of process.
+Thread is a logical instruction given from a process to perform specified task.
+process of transfering control from one thread to another is called yeilding.
+Int the process of yeilding if any thread structs up and could not finish its task then further threads will be eagarly waiting to get control on to them this situation is called as thread staviation. 
+Thread monitor and schedular will take care of thread execution process.
+
+Life cycle of thread:
+
+		NEW
+		 |
+		 |
+	      Ready
+		|	
+		|
+	     Runnable ------->WAIT
+		      <-------
+		|       /
+		|      /
+	          Dead
+
+2 ways:
+
+1.By inheriting java.lang.Thread class
+2.By implementing java.lang.Runnable interface
+
+Runnable interface is implented by thread class.
+
+Creating thread using thread class::
+
+Constructors:
+Thread();
+Thread(String);
+Thread(Runnable);
+Thread(Runnable,String);
+Thread(ThreadGroup);
+
+Methods:
+void start();
+String getName();
+void setName(String);
+void setPriority(int);
+int getPriority();
+void join() throws java.lang.InterruptedException
+static void sleep(long) throws java.lang.InterruptedException
+boolean isAlive();
+boolean isDaemon();
+void setDaemon(boolean);
+static Thread currentThread();
+
+we need to override , public void run() to define functionality of thread 
+
+
+
+ex:
+
+
+class MyThread extends Thread
+{
+	public void run()
+	{	
+		for(int i=0;i<=10;i++)
+		{
+			try{
+				sleep(1000);  //thread will wait 1000 mill seconds for every loop
+				System.out.println("Hello");
+			}catch(Exception e) {}
+		}
+	}
+}
+class MyThreadTest
+{
+	public static void main(String[] args)
+	{
+		MyThread mt=new MyThread();
+		mt.start();    //or mt.run();
+	}
+} 
+
+//output:
+
+javac MyThreadTest.java
+java MyThreadTest
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   //wait 1000milli seconds
+hello   
+
+
+diff b/w start() nd run() :
+
+==>there are multpile threads having in program then we use run method then every thread will start from individual loactions.but start method can start from same memory location.
+so,we can use start method instead of run
+
+
+ex::
+
+class MultiThread extends Thread
+{
+	String s;
+	MultiThread(String s)
+	{
+		this.s=s;
+	}
+	public void run()
+	{
+		for(int i=0;i<5;i++)
+		{
+			try{
+				System.out.println("Thread" +s);
+				sleep(1000);  //thread will wait 1000 mill seconds for every loop
+			}catch(Exception e) {}
+		}
+	}
+}
+class MyThreadTest
+{
+	public static void main(String[] args)
+	{
+		MultiThread mt1=new MultiThread("A");
+		MultiThread mt2=new MultiThread("A");
+		MultiThread mt3=new MultiThread("A");
+		mt1.start();   
+		mt2.start();
+		mt3.start();    
+	}
+} 
+
+output there is no guarentee which thread can excute .there is no sequence in execution of threads ABC BCA CBA etc...................
+
+output:
+javac MyThreadTest.java
+java MyThreadTest
+Thread B
+Thread A
+Thread C
+Thread A
+Thread C
+Thread B
+..........
+
+
+join() method makes other threads to wait till current thread finishes its task.
+
+ex:
+class MyThreadTest
+{
+	public static void main(String[] args) throws Exception
+	{
+		MultiThread mt1=new MultiThread("A");
+		MultiThread mt2=new MultiThread("A");
+		MultiThread mt3=new MultiThread("A");
+		mt1.start(); 
+		mt1.join();  
+		mt2.start();
+		mt3.start();    
+	}
+}
+Thread A
+Thread A
+Thread A
+....
+...
+...
+Thread B
+Thread C
+Thread C
+Thread B
+....
+...................
+
+default thread of each class is main().
+
+mt1.start();
+mt2.start();
+mt2.join();
+mt3.start();
+
+Thread A
+Thread B
+Thread A
+Thread B
+Thread A
+Thread B
+.....................
+
+Thread priority:
+it will make that thread start first.
+thread priority is not working now a days
+
+
+creating thread using runnable interace:
+
+
+when a class wants to perform multi threading and it is inheriting another class then runnable interface is used to create thread.
+Runnable interface does not have any method to control thread hence reference of this interface as to be passed into thread class constructor and invoke required methods.
+
+
+ex:
+
+class RunThread implements Runnable
+{
+	public void run()
+	{
+		for(int i=1;i<=5;i++)
+		{
+			try{
+			  System.out.println("Hello"+i);	
+				Thread.sleep(1000);
+			} catch (Exception e){}
+		}
+	}
+}
+class RunDemo
+{
+	public static void main(String[] args)
+	{
+		Thread t = new Thread(new RunThread());
+		t.start();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

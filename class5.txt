@@ -1,0 +1,589 @@
+Environmental variables:
+------------------------
+Java having somany types of environmental variables.4 are important variables are
+1.path
+2.class_path
+3.path_Ext
+4.java_Home
+
+******************
+
+In java program having 4 classes then JVM clreate 4 .class files
+Interface also a one type of class then interface also create 1 .class file in JVM
+
+
+Rules:
+------
+inside interface having class
+inside class having an interface
+indside class having class(inner class)
+
+inner classes 
+---------------
+inner classes is displayed wit $ in compile time
+A$B.class
+A$C.class
+A.class
+
+class A{
+int a;
+	class B{
+		}
+	class C{
+		}
+}
+B & C are inner classes & A is outer class then A$B A$c is displays in JVM.
+
+***************************************************************************************************************************************
+
+			OVERLOADING
+		=============================
+extra behaviour to the original behaviour is called overloading.
+
+-->same kind of operation need not to access new memory.
+-->reducing no.of functions.
+-->reducing complexity.
+
+RULES
+-----
+-->Number of parameters.
+-->return type.
+-->order of parameters.
+
+example:
+class A
+{
+int a,b;
+void sum(int a,int b)
+{
+int c=a+b;
+s.o.p(c);
+}
+void sum(int a,double b)
+{
+double c=a+b;
+s.o.p(c);
+}
+int sum(double b,int a)
+{
+double c=a+b;
+s.o.p(c);
+}
+p.v.s.m(String[] args)
+{
+A z=new A();
+z.sum(10,20);
+z.sum(10,23.4);
+int x=z.sum(23.4,70);
+}
+}
+
+
+********************************************************************************
+
+
+Brief introduction about static and non static keywords 
+---------------------------------------------------------
+
+static is used in:
+1.inner class
+2.class
+3.variable
+4.method
+5.object
+6.block
+
+==>A static member can able to call other static members directly.
+==>A static member unable to call other non static members directly.it is possible by creating the object.
+
+Static is used in 8 types
+non static is also used in 8 types
+
+
+			static methods
+			----------------
+
+1.same class static variables can call in static method
+
+2.same class static methods can call in static methods
+
+3.other class static variable can call in static method
+
+4.other class static methods can call in static method
+
+5.same class non-static variables can call in static methods
+
+6.same class non-static methods can call in static methods
+
+7.other class non-static variables can call in static methods
+
+8.other class non-static methods can call in static methods
+
+
+
+
+
+		non-static methods
+		------------------
+1.non-static methods ,can call non static variables of same class
+
+2.non-static methods,can call non static methods of same class
+
+3.first class non static variable can call second class non static method
+
+4.first class non static method can call second class non static method
+
+5.non-static methods,can call static variables of same class
+
+6.non-static methods,can call static methods of same class
+
+7.one class static variables can call by non static methods in another class
+
+8.one class static method can call by non static methods of other class
+
+
+
+
+		STATIC METHODS
+	================================
+
+1.same class static variables can call in static method
+
+==>directly, we can call static variables in static method having only one class
+ex:
+--
+class Demo
+{
+static int a;
+public static void main(String[] args)
+{
+s.o.p(a);
+}
+}
+
+
+2.same class static methods can call in static methods
+
+==>directly, we can call static methods in other static method having only in one class
+
+ex:
+--
+class Demo
+{
+static void display()
+{
+int c=10;
+s.o.p(c);
+}
+public static void main(String[] args)
+{
+input();
+}
+}
+
+
+
+3.other class static variable can call in static method
+
+==>one class static variables can call in another class static methods by using class name.
+
+ex
+--
+class ABC
+{
+static int a=10;
+}
+class XYZ
+{
+p.v.s.m()
+{
+s.o.p(ABC.a);
+}
+}
+
+
+4.other class static methods can call in static method
+
+==>one class static methods can call in another class static methods by using class name.
+
+ex
+--
+class ABC
+{
+static void input()
+{
+}
+}
+class XYZ
+{
+p.v.s.m()
+{
+ABC.input();
+}
+}
+
+
+5.same class non-static variables can call in static methods
+
+==>same class non static variables can call in same class static methods using object
+
+ex
+--
+class Demo
+{
+int a;
+p.v.s.m()
+{
+Demo d=new Demo();
+d.a=10;
+s.o.p(d.a);
+}
+}
+
+6.same class non-static methods can call in static methods
+
+==>one class non static methods can call in same class static methods using object
+
+ex
+--
+class Demo
+{
+void input()
+{}
+p.v.s.m()
+{
+Demo d=new Demo();
+d.input();
+}
+}
+7.other class non-static variables can call in static methods
+
+==>one class non static variables can call in another class static methods using object creation
+
+ex
+--
+class ABC
+{
+int a;
+}
+class XYZ
+{
+p.v.s.m()
+{
+ABC d=new ABC();
+d.a=10;
+s.o.p(d.a);
+}
+}
+
+8.other class non-static methods can call in static methods
+
+==>one class non static methods can call in another class static methods using object creation
+
+ex
+--
+class ABC
+{
+void input()
+{}
+}
+class XYZ
+{
+p.v.s.m()
+{
+ABC d=new ABC();
+d.input();
+}
+
+===>caller is available in static methods then we can use main method in all the examples.if u dont want to call in main then we can write your own static method also.
+
+
+	
+
+			NON-STATIC METHODS
+		==================================
+
+1.non-static methods ,can call non static variables of same class
+
+==>one class no static variables can call in same class non static methods "directly".
+
+ex
+--
+class Demo
+{
+int a=10;
+int b=20;
+int c=a+b;
+void input()
+{
+s.o.p(c);
+}
+}
+
+
+2.non-static methods,can call non static methods of same class
+
+==>one class no static methods can call in same class non static methods "directly".
+
+ex
+--
+class Demo
+{
+void input()
+{}
+void output()
+{
+input();
+}
+}
+
+3.first class non static variable can call second class non static method
+
+==>first class non static variables can call second class non static methods by using first class object
+
+ex
+--
+class ABC
+{
+int a=10;
+}
+class XYZ
+{
+void output()
+{
+ABC x=new ABC();
+s.o.p(x.a);
+}
+}
+
+
+4.first class non static method can call second class non static method
+
+==>first class non static methods can call second class non static methods by using first class object
+
+ex
+--
+class ABC
+{
+void input()
+{}
+}
+class XYZ
+{
+void output()
+{
+ABC x=new ABC();
+x.input();
+}
+}
+
+
+5.non-static methods,can call static variables of same class
+
+==>one class static variables can call in same class non static methods "directly".
+
+ex
+--
+class Demo
+{
+static int a=10;
+void input()
+{
+s.o.p(a);
+}
+}
+
+6.non-static methods,can call static methods of same class
+
+==>one class static methods can call in same class non static methods "directly".
+
+ex
+--
+class Demo
+{
+static void input()
+{
+int c=10;
+s.o.p(c);
+}
+void output()
+{
+input();
+}
+}
+
+
+7.one class static variables can call by non static methods in another class
+
+==>one class static variables can call in another class non static methods by using first class object
+
+ex
+--
+class ABC
+{
+static int a;
+}
+class XYZ
+{
+void input()
+{
+Demo d=new Demo();
+d.a=10;
+s.o.p(d.a);
+}
+}
+
+8.one class static methods can call by non static methods in another class
+
+==>one class static methods can call in another class non static methods by using first class object
+
+ex
+--
+class ABC
+{
+static void output()
+{
+s.o.p("a=10");
+}
+}
+class XYZ
+{
+void input()
+{
+Demo d=new Demo();
+d.output();
+}
+}
+
+==>All the examples does not having main method.
+==>All the programs are compiled but not executed.
+==>main method is used for excuting the program.main function is no need in compiling.
+
+
+
+************************************************************************************************************
+
+STATIC keyword is used in 
+1.inner classes
+2.class
+3.variable
+4.method
+5.object
+6.block
+
+ex:
+class Test
+{
+static class Demo //inner class
+{
+static Test t=new Test(); //object
+static int x; //variable
+static //block
+{
+--
+----
+}
+static void input()  //method
+{
+}
+
+==>u can use static objects then it will create top of the program only otherwise we cant use static objects.
+
+All static variables are may or may not be final.
+All final variables are static for saving memory.
+whenever a variable and value common then declared as a static .
+
+*******************************
+==>function same and implementation also same(common) then we declare such methods as static
+==>static methods also overloading
+==>static methods can be called by class name or object name
+==>non static methods can be called by only object name
+==>All constructors are non static only.constructors never be static.
+
+==>main method possible to overload but not override.
+
+main method is always static becaouse it is not possible to override.
+overriding is done with only non static 
+
+
+
+class A
+{
+static int x;
+int y;
+static void show()
+{
+x=10;	//static method can call static members directly
+A a=new A();
+a.y=20; //static method can call non static members by using object
+}
+}
+
+********************************************************************************************
+
+Copy constructor
+===============
+A(A x)
+
+parameter passing an object,having same class name then it is called copy construcror.
+copy constructor always having only one parameter.
+
+
+
+		OPERATOR OVERLOADING
+	========================================
+Operator overloading related programs are already predefined in JVM.
+Based on the operands,,,,operator behaviour is changed then it is operator overloading
+ex: + *
+
+'+'  -->Actual behaviour of + is addition but in java we can use concatination also
+'*' --> Actual behaviour of * is multiplication but in java we can use All
+
+
+
+			METHOD CHAINING
+		==================================
+
+==>based on first method output second m ethod will access it is called method chaining.
+==>primitive data types cant acceot method chaining only object types are eligible for method chaining.
+
+class Test
+{
+Object input()
+{
+s.o.p("i am input method");
+return this;
+}
+Object output()
+{
+s.o.p("i am output method");
+return this;
+}
+void demo()
+{
+s.o.p("i am demo method");
+}
+p.v.s.m(S a)
+{
+Test a=new Test();
+a.input().output().demo();	//method chaining
+}
+}
+
+
+
+		Object conversion
+	=================================
+
+Object x=t.input();
+Object y=x.output();
+
+x is Object class(super) objects but output() function is available in test class not in object class
+we need object conversion
+
+Object y=((Test)x).output();  //object conversion
+
+
+
+
+ 
