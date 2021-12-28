@@ -41,7 +41,7 @@ these 2 classes are called LegacyClasses(means old classes).
 2.Set:
 It is an interface.
 dervied from collection interface.
-List is unordered collection
+Set is unordered collection
 Set have some classes :
 1.HashSet
 2.TreeSet
